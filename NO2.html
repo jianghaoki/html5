@@ -27,11 +27,14 @@
             border: solid 1px gray;
             margin-top: 30px;
             margin-left: 0px;
+            list-style: none;
+            overflow: hidden;
         }
         li{
             width: 15px;
             height: 25px;
             position: relative;
+            overflow: hidden;
             float: left;
             top: 15px;
             margin-left: 5px;
@@ -71,21 +74,14 @@
     var skin3=document.getElementById("skin3");
     var skin4=document.getElementById("skin4");
     var skin5=document.getElementById("skin5");
-    if (storage.length==0) {
-        skin0.style.top=4+"px";
-        div.style.backgroundColor=skin0.style.backgroundColor;
-    }
-    if (storage.length!=0){
-        div.style.backgroundColor=storage.color;
-        document.getElementById(storage.id).style.top=4+"px";
-    }
     skin0.onclick=function() {
         storage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin0.style.backgroundColor;
-        skin0.style.top=5+"px";
+        skin0.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id",skin0.id);
         storage.setItem("color",skin0.style.backgroundColor);
     }
@@ -95,7 +91,8 @@
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin1.style.backgroundColor;
-        skin1.style.top=5+"px";
+        skin1.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id", skin1.id);
         storage.setItem("color", skin1.style.backgroundColor);
     }
@@ -105,7 +102,8 @@
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin2.style.backgroundColor;
-        skin2.style.top=5+"px";
+        skin2.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id", skin2.id);
         storage.setItem("color", skin2.style.backgroundColor);
     }
@@ -115,7 +113,8 @@
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin3.style.backgroundColor;
-        skin3.style.top=5+"px";
+        skin3.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id", skin3.id);
         storage.setItem("color", skin3.style.backgroundColor);
     }
@@ -125,7 +124,8 @@
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin4.style.backgroundColor;
-        skin4.style.top=5+"px";
+        skin4.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id", skin4.id);
         storage.setItem("color", skin4.style.backgroundColor);
     }
@@ -135,9 +135,19 @@
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin5.style.backgroundColor;
-        skin5.style.top=5+"px";
+        skin5.style.top=4+"px";
+        /*将当前的颜色存储起来*/
         storage.setItem("id", skin5.id);
         storage.setItem("color", skin5.style.backgroundColor);
+    }
+    if (storage.length==0) {
+        skin0.style.top=4+"px";
+        div.style.backgroundColor=skin0.style.backgroundColor;
+    }
+    /*当页面打开时，颜色是之前关闭前设置的颜色*/
+    if (storage.length!=0){
+        div.style.backgroundColor=storage.getItem('color');
+        document.getElementById(storage.id).style.top=4+"px";
     }
 </script>
 </html>
