@@ -60,12 +60,11 @@
             <li id="skin5" class="skin5" title="紫色" style="background-color:purple;"></li>
         </ul>
         <div id="div" class="div">
-            LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了， 该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+            localStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了， 该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
         </div>
     </fieldset>
 </body>
 <script>
-    var storage=window.localStorage;
     var li=document.getElementsByTagName("li");
     var div=document.getElementById("div");
     var skin0=document.getElementById("skin0");
@@ -75,79 +74,79 @@
     var skin4=document.getElementById("skin4");
     var skin5=document.getElementById("skin5");
     skin0.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin0.style.backgroundColor;
         skin0.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id",skin0.id);
-        storage.setItem("color",skin0.style.backgroundColor);
+        localStorage.setItem("id",skin0.id);
+        localStorage.setItem("color",skin0.style.backgroundColor);
     }
     skin1.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin1.style.backgroundColor;
         skin1.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id", skin1.id);
-        storage.setItem("color", skin1.style.backgroundColor);
+        localStorage.setItem("id", skin1.id);
+        localStorage.setItem("color", skin1.style.backgroundColor);
     }
     skin2.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin2.style.backgroundColor;
         skin2.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id", skin2.id);
-        storage.setItem("color", skin2.style.backgroundColor);
+        localStorage.setItem("id", skin2.id);
+        localStorage.setItem("color", skin2.style.backgroundColor);
     }
     skin3.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin3.style.backgroundColor;
         skin3.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id", skin3.id);
-        storage.setItem("color", skin3.style.backgroundColor);
+        localStorage.setItem("id", skin3.id);
+        localStorage.setItem("color", skin3.style.backgroundColor);
     }
     skin4.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin4.style.backgroundColor;
         skin4.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id", skin4.id);
-        storage.setItem("color", skin4.style.backgroundColor);
+        localStorage.setItem("id", skin4.id);
+        localStorage.setItem("color", skin4.style.backgroundColor);
     }
     skin5.onclick=function() {
-        storage.clear();
+        localStorage.clear();
         for (var i=0;i<6;i++) {
             li[i].style.top=14+"px";
         }
         div.style.backgroundColor=skin5.style.backgroundColor;
         skin5.style.top=4+"px";
         /*将当前的颜色存储起来*/
-        storage.setItem("id", skin5.id);
-        storage.setItem("color", skin5.style.backgroundColor);
+        localStorage.setItem("id", skin5.id);
+        localStorage.setItem("color", skin5.style.backgroundColor);
     }
-    if (storage.length==0) {
+    if (localStorage.length==0) {
         skin0.style.top=4+"px";
         div.style.backgroundColor=skin0.style.backgroundColor;
     }
     /*当页面打开时，颜色是之前关闭前设置的颜色*/
-    if (storage.length!=0){
-        div.style.backgroundColor=storage.getItem('color');
-        document.getElementById(storage.id).style.top=4+"px";
+    if (localStorage.length!=0){
+        div.style.backgroundColor=localStorage.getItem('color');
+        document.getElementById(localStorage.id).style.top=4+"px";
     }
 </script>
 </html>
